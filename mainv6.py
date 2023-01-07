@@ -27,10 +27,10 @@ while True:
             change = int(change[1])
             rewrite = input('Insert new to do: ')
             todos[change - 1] = rewrite + '\n'
-            update_todos()
+            update_todos(todos)
         except ValueError:
             print('Your command is not valid')
-            continue #this is begin the while loop again, so we don't have to ask the user input again
+            continue #this was begin the while loop again, so we don't have to ask the user input again
     elif user_action.startswith('show'):
         show_todos()
 
@@ -53,10 +53,5 @@ while True:
 
     elif user_action.startswith('exit'):
         break
-
     else:
         print('This command is not valid')
-
-
-
-
