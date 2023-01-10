@@ -10,5 +10,9 @@ def show_todos(filepath=FILEPATH):
 
 
 def update_todos(tasks, filepath=FILEPATH):
+    with open(filepath, 'r') as file:
+        todos = file.readlines()
+        todos.append(tasks + '\n')
+
     with open(filepath, 'w') as file:
-        file.writelines(tasks)
+        file.writelines(todos)
