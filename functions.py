@@ -9,10 +9,11 @@ def show_todos(filepath=FILEPATH):
         print(f"{i + 1} - {item}")
 
 
-def update_todos(tasks, filepath=FILEPATH):
+def get_todos(filepath=FILEPATH):
     with open(filepath, 'r') as file:
         todos = file.readlines()
-        todos.append(tasks + '\n')
+        return todos
 
+def update_todos(tasks, filepath=FILEPATH):
     with open(filepath, 'w') as file:
-        file.writelines(todos)
+        file.writelines(tasks)
